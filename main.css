@@ -1,0 +1,157 @@
+body {
+    margin: 0;
+}
+.puzzle15 {
+    font-family: "Times New Roman", sans-serif;
+    user-select: none;
+    width: 500px;
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+}
+.puzzle15 div {
+    box-sizing: border-box;
+}
+.puzzle15-header {
+    margin-left: -10px;
+}
+.puzzle15-1_3 {
+    width: 33.3333%;
+    float: left;
+    padding-left: 10px;
+}
+.puzzle15-left {
+    float: left;
+}
+.puzzle15-right {
+    float: right;
+}
+.puzzle15-center {
+    text-align: center;
+}
+.puzzle15-header {
+    margin-bottom: 10px;
+    line-height: 42px;
+}
+.puzzle15-header:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.puzzle15-header .puzzle15-btn {
+  width: 100%;
+  text-align: center;
+}
+.puzzle15-line {
+    margin: 5px 0;
+}
+.puzzle15-footer {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: right;
+    font-size: 22px;
+    color: #8f7a66;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+}
+.puzzle15-title {
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    line-height: 44px;
+    padding-top: 50px;
+    color: #8f7a66;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+}
+.puzzle15-subtitle {
+    font-size: 12px;
+    text-align: right;
+    font-weight: bold;
+    color: #8f7a66;
+}
+.puzzle15-btn {
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    font: inherit;
+    font-size: 14px;
+    line-height: 1;
+    display: block;
+    font-weight: bold;
+    border: 0;
+}
+button.puzzle15-btn {
+    cursor: pointer;
+}
+.puzzle15-btn-double {
+    height: 85px;
+}
+.puzzle15-score-wr {
+    padding-top: 20px;
+    line-height: 25px;
+}
+.puzzle15-moves-wr {
+    padding-top: 12px;
+    line-height: 16px;
+}
+
+
+.puzzle15.done {
+    background: #a54;
+}
+.puzzle15-board {
+    background-color: #BBADA0;
+    border-radius: 5px;
+    border: 8px solid #BBADA0;
+}
+.puzzle15-board > div {
+    cursor: pointer;
+    width: 22%;
+    margin: 1.5%;
+    padding: 11% 0;
+    line-height: 0;
+    font-size: 56px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    transition: background .1s;
+    box-sizing: border-box;
+    color: #888;
+    border-radius: 3px;
+    text-shadow: 1px 1px 2px black, 0 0 1em white;
+    cursor: pointer;
+    border: 1px dotted #CCC;
+}
+.puzzle15-board > div[data-val="1"],
+.puzzle15-board > div[data-val="2"],
+.puzzle15-board > div[data-val="3"],
+.puzzle15-board > div[data-val="4"] {
+    background-color: #eed;
+}
+.puzzle15-board > div[data-val="5"],
+.puzzle15-board > div[data-val="6"],
+.puzzle15-board > div[data-val="7"],
+.puzzle15-board > div[data-val="8"] {
+    background-color: #dde;
+}
+.puzzle15-board > div[data-val="9"],
+.puzzle15-board > div[data-val="10"],
+.puzzle15-board > div[data-val="11"],
+.puzzle15-board > div[data-val="12"] {
+    background-color: #ded;
+}
+.puzzle15-board > div[data-val="13"],
+.puzzle15-board > div[data-val="14"],
+.puzzle15-board > div[data-val="15"] {
+    background-color: #edd;
+}
+.puzzle15-board > div[data-val]:not([data-val=""]):hover {
+    background: #ffe2c5;
+}
