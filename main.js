@@ -2,6 +2,7 @@ const N = 4;
 class Puzzle15 {
     constructor() {
         this.el = document.createElement('div');
+        this.el.classList.add('gsp');
         this.el.classList.add('puzzle15');
         this.reset();
     }
@@ -33,7 +34,7 @@ class Puzzle15 {
         this.free = JSON.parse(old.free);
         this.moves = old.moves;
         this.score = old.score;
-        
+
         this.render();
     }
     shuffle() {
@@ -86,42 +87,38 @@ class Puzzle15 {
                 }
             }
         }
-        this.score = localScore * 100 - this.moves * 5;
+        this.score = localScore * 100 - this.moves;
         if (this.score < 0) this.score = 0;
         let content = `
-            <div class="puzzle15-header">
-                <div class="puzzle15-1_3">
-                    <div class="puzzle15-line">
-                        <button class="puzzle15-new-game puzzle15-btn puzzle15-btn-double">New game</button>
+            <div class="gsp-row gsp-header">
+                <div class="gsp-1-3">
+                    <div class="gsp-line">
+                        <button class="puzzle15-new-game gsp-btn gsp-btn-double gsp-block">New game</button>
                     </div>
-                    <div class="puzzle15-line">
-                        <button class="puzzle15-undo puzzle15-btn">Undo</button>
+                    <div class="gsp-line">
+                        <button class="puzzle15-undo gsp-btn gsp-block">Undo</button>
                     </div>
                 </div>
-                <div class="puzzle15-1_3">
-                    <h1 class="puzzle15-title">Puzzle 15</h1>
-                    <div class="puzzle15-subtitle">by 6a5p1</div>
+                <div class="gsp-1-3">
+                    <h1 class="gsp-title">Puzzle 15</h1>
+                    <div class="gsp-subtitle">by 6a5p1</div>
                 </div>
-                <div class="puzzle15-1_3">
-                    <div class="puzzle15-line">
-                        <div class="puzzle15-score-wr puzzle15-btn-double puzzle15-btn">Score: <br>${this.score}</div>
+                <div class="gsp-1-3">
+                    <div class="gsp-line">
+                        <div class="gsp-score-wr gsp-btn-double gsp-btn gsp-block">Score: <br>${this.score}</div>
                     </div>
-                    <div class="puzzle15-line">
-                        <div class="puzzle15-moves-wr puzzle15-btn">Moves: ${this.moves}</div>
+                    <div class="gsp-line">
+                        <div class="gsp-btn gsp-block">Moves: ${this.moves}</div>
                     </div>
                 </div>
             </div>
-            <div class="puzzle15-board">${board}</div>`;
+            <div class="gsp-board">${board}</div>`;
         this.el.innerHTML = content;
 
-        this.el.querySelector('.puzzle15-board').addEventListener('click', this.onClick.bind(this));
+        this.el.querySelector('.gsp-board').addEventListener('click', this.onClick.bind(this));
         this.el.querySelector('.puzzle15-new-game').addEventListener('click', this.reset.bind(this));
         this.el.querySelector('.puzzle15-undo').addEventListener('click', this.undo.bind(this));
 
-        if (valid) {
-            this.el.classList.add('done');
-        } else {
-            this.el.classList.remove('done');
-        }
+        this.el.classList.toggle('done', valid);
     }
 }

@@ -1,7 +1,8 @@
-body {
+.gsp * {
+    box-sizing: border-box;
     margin: 0;
 }
-.puzzle15 {
+.gsp {
     font-family: "Times New Roman", sans-serif;
     user-select: none;
     width: 500px;
@@ -10,53 +11,41 @@ body {
     text-align: center;
     font-weight: bold;
 }
-.puzzle15 div {
-    box-sizing: border-box;
-}
-.puzzle15-header {
+.gsp-row {
     margin-left: -10px;
+    margin-right: -10px;
 }
-.puzzle15-1_3 {
+.gsp-1-3 {
+    float: left;
     width: 33.3333%;
-    float: left;
     padding-left: 10px;
+    padding-right: 10px;
 }
-.puzzle15-left {
+.gsp-left {
     float: left;
 }
-.puzzle15-right {
+.gsp-right {
     float: right;
 }
-.puzzle15-center {
+.gsp-center {
     text-align: center;
 }
-.puzzle15-header {
+.gsp-header {
     margin-bottom: 10px;
     line-height: 42px;
 }
-.puzzle15-header:after {
+.gsp-row:after {
     content: '';
     display: block;
     clear: both;
 }
-.puzzle15-header .puzzle15-btn {
+.gsp-block {
   width: 100%;
-  text-align: center;
 }
-.puzzle15-line {
+.gsp-line {
     margin: 5px 0;
 }
-.puzzle15-footer {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-weight: bold;
-    text-align: right;
-    font-size: 22px;
-    color: #8f7a66;
-    letter-spacing: 3px;
-    text-shadow: 1px 1px 2px black, 0 0 1em white;
-}
-.puzzle15-title {
+.gsp-title {
     text-align: center;
     margin: 0;
     font-size: 30px;
@@ -66,51 +55,72 @@ body {
     letter-spacing: 3px;
     text-shadow: 1px 1px 2px black, 0 0 1em white;
 }
-.puzzle15-subtitle {
+.gsp-subtitle {
     font-size: 12px;
     text-align: right;
     font-weight: bold;
     color: #8f7a66;
 }
-.puzzle15-btn {
-    background: #8f7a66;
+.gsp-btn {
+    background-color: #8f7a66;
     border-radius: 3px;
-    padding: 0 20px;
+    padding: 10px 0;
     text-decoration: none;
     color: #f9f6f2;
-    height: 40px;
-    font: inherit;
+    line-height: 20px;
+    font-family: inherit;
     font-size: 14px;
-    line-height: 1;
     display: block;
     font-weight: bold;
     border: 0;
+    transition: background-color .1s;
 }
-button.puzzle15-btn {
+button.gsp-btn:hover {
+    background-color: #6f5a46;
+}
+button.gsp-btn {
     cursor: pointer;
 }
-.puzzle15-btn-double {
+.gsp-btn-double {
     height: 85px;
 }
-.puzzle15-score-wr {
-    padding-top: 20px;
-    line-height: 25px;
-}
-.puzzle15-moves-wr {
-    padding-top: 12px;
-    line-height: 16px;
+.gsp-score-wr {
+    padding-top: 25px;
 }
 
 
-.puzzle15.done {
-    background: #a54;
+.gsp.done .gsp-board {
+    pointer-events: none;
+    position: relative;
 }
-.puzzle15-board {
+.gsp.done .gsp-board:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .1);
+    z-index: 1;
+}
+.gsp.done .gsp-board:after {
+    content: 'You won!';
+    position: absolute;
+    text-shadow: 2px 2px 2px #fff, 4px 4px 4px #000;
+    font-size: 42px;
+    line-height: 1;
+    font-weight: bold;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -25px;
+}
+.gsp-board {
     background-color: #BBADA0;
     border-radius: 5px;
     border: 8px solid #BBADA0;
 }
-.puzzle15-board > div {
+.gsp-board > div {
     cursor: pointer;
     width: 22%;
     margin: 1.5%;
@@ -129,29 +139,29 @@ button.puzzle15-btn {
     cursor: pointer;
     border: 1px dotted #CCC;
 }
-.puzzle15-board > div[data-val="1"],
-.puzzle15-board > div[data-val="2"],
-.puzzle15-board > div[data-val="3"],
-.puzzle15-board > div[data-val="4"] {
+.gsp-board > div[data-val="1"],
+.gsp-board > div[data-val="2"],
+.gsp-board > div[data-val="3"],
+.gsp-board > div[data-val="4"] {
     background-color: #eed;
 }
-.puzzle15-board > div[data-val="5"],
-.puzzle15-board > div[data-val="6"],
-.puzzle15-board > div[data-val="7"],
-.puzzle15-board > div[data-val="8"] {
+.gsp-board > div[data-val="5"],
+.gsp-board > div[data-val="6"],
+.gsp-board > div[data-val="7"],
+.gsp-board > div[data-val="8"] {
     background-color: #dde;
 }
-.puzzle15-board > div[data-val="9"],
-.puzzle15-board > div[data-val="10"],
-.puzzle15-board > div[data-val="11"],
-.puzzle15-board > div[data-val="12"] {
+.gsp-board > div[data-val="9"],
+.gsp-board > div[data-val="10"],
+.gsp-board > div[data-val="11"],
+.gsp-board > div[data-val="12"] {
     background-color: #ded;
 }
-.puzzle15-board > div[data-val="13"],
-.puzzle15-board > div[data-val="14"],
-.puzzle15-board > div[data-val="15"] {
+.gsp-board > div[data-val="13"],
+.gsp-board > div[data-val="14"],
+.gsp-board > div[data-val="15"] {
     background-color: #edd;
 }
-.puzzle15-board > div[data-val]:not([data-val=""]):hover {
+.gsp-board > div[data-val]:not([data-val=""]):hover {
     background: #ffe2c5;
 }
